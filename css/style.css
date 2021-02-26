@@ -1,18 +1,16 @@
-@font-face {
-    font-family: 'Poppins';
-    src: url(../fonts/Poppins-Regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-html, body {
+html,
+body {
     width: 100%;
-    overflow-x: hidden;
     padding: 0;
     margin: 0;
     height: auto;
-    height-min: 100%;
-
-
     background-color: #DEE2E3;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
 }
 
 header {
@@ -205,9 +203,9 @@ header {
 
 .banner-image {
     position: absolute;
-    width: 1237px;
+    width: 80%;
     height: 892px;
-    left: 299px;
+    right: 0;
     top: 16px;
     background: url(../img/main/banner.png) center no-repeat;
     background-size: contain;
@@ -540,15 +538,22 @@ footer {
     color: #242428;
 }
 
-.block-style .flex {
-    margin-right: -34px;
+.block-styles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
 }
 
 .block-style-item {
     display: inline-block;
-    margin-right: 28px;
-    margin-bottom: 28px;
+    width: calc(100% / 3);
+    padding: 15px;
     position: relative;
+    box-sizing: border-box;
+}
+
+.block-style-item img {
+    width: 100%;
 }
 
 .block-style-item-btn {
@@ -556,20 +561,16 @@ footer {
     flex-direction: row;
     align-items: center;
     padding: 5px 16px 6px;
-
+    margin: 0;
     position: absolute;
-
-    left: 16px;
-    bottom: 10px;
+    left: 30px;
+    bottom: 30px;
 
     /* white */
 
     background: #FFFFFF;
     border-radius: 4px;
 
-
-
-    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
@@ -586,7 +587,6 @@ footer {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 12px 0px;
 }
 
 .green-block {
@@ -1011,6 +1011,7 @@ footer {
 }
 
 .comment-item {
+    box-sizing: content-box;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1396,6 +1397,25 @@ footer {
 }
 
 @media screen and (max-width: 840px) {
+    .block-styles {
+        padding: 10px;
+    }
+
+    .block-style-item {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .block-style-item-btn {
+        left: 10px;
+        bottom: 10px;
+    }
+
+    .black-sdtv-pcale {
+        overflow: hidden;
+    }
+
     .banner {
         height: 442px;
     }
@@ -1485,7 +1505,7 @@ footer {
     }
 
     .black-sdtv-pcale {
-        width: 300%;
+        /* width: 300%; */
     }
 
     .black-sdtv-pcale-btn-line {
@@ -1512,14 +1532,9 @@ footer {
         display: flex;
     }
 
-    .block-style-item img {
-        width: 226px;
-    }
-
     .block-style-item-btn {
         font-size: 16px;
         line-height: 24px;
-        bottom: -2px;
     }
 
     .footer-cols {
