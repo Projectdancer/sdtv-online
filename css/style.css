@@ -159,7 +159,7 @@ header {
 
 .header-block-right {
     margin: auto;
-    margin-right: 24px;
+    margin-right: 16px;
 }
 
 .logo {
@@ -249,6 +249,12 @@ header {
     /* black */
 
     color: #242428;
+
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    z-index: 10000;
+    margin-bottom: 0;
 }
 
 /* Auto Layout */
@@ -350,12 +356,12 @@ footer {
 }
 
 .black-sdtv {
-    /*position: absolute;
-    width: 1440px;*/
+    position: relative;
+    /*width: 1440px;*/
     width: 100%;
     height: 601px;
     left: 0px;
-    top: 829px;
+    /*top: 829px;*/
 
     /* dark gray */
 
@@ -481,7 +487,7 @@ footer {
     margin-left: 87px;
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 1024px) {
     .desc-block {
         display: none;
     }
@@ -510,7 +516,13 @@ footer {
         font-size: 12px;
         line-height: 18px;
         color: #FFFFFF;
-        width: 100%;
+        width: auto;
+
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        z-index: 10000;
+        margin-bottom: 0;
     }
 
     .banner-block-annotation {
@@ -518,7 +530,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 841px) {
+@media screen and (min-width: 1024px) {
     .mob-block {
         display: none;
     }
@@ -770,7 +782,7 @@ footer {
 
 .block-mod-description-bg-layer {
     margin: auto;
-    width: 1229px;
+    /*width: 1229px;*/
     height: 640px;
     /*
     height: 553px;
@@ -869,11 +881,11 @@ footer {
     z-index: 1;
 }
 
-.block-mod-description-menu-link:hover:after {
+.block-mod-description-menu-link:hover:after, .block-mod-description-menu-link.active:after {
     background-color: #615EFF;
 }
 
-.block-mod-description-menu-link:hover {
+.block-mod-description-menu-link:hover, .block-mod-description-menu-link.active {
     color: #615EFF;
     border-color: #615EFF;
 }
@@ -1194,7 +1206,7 @@ footer {
 
 .classes-item-style, .classes-item-instructor {
     position: absolute;
-    left: 0px;
+    left: 16px;
     bottom: 17px;
 
     /* text-5 */
@@ -1396,7 +1408,7 @@ footer {
     opacity: 0;
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 1024px) {
     .block-styles {
         padding: 10px;
     }
@@ -1426,14 +1438,18 @@ footer {
         top: 60px;
         left: 16px;
         right: 16px;
-        position: relative;
-        width: 100%;
+        /*position: relative;*/
+        width: auto;
     }
 
     .banner-image {
         left: 0;
         width: 100%;
         top: -190px;
+
+        top: 120px;
+        background-size: cover;
+        height: 464px;
     }
 
     .header-block-left {
@@ -1446,12 +1462,26 @@ footer {
         left: 0;
         top: 300px;
         padding-bottom: 60px;
+        right: 0;
+
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        z-index: 10000;
+        margin-bottom: 0;
     }
 
     .banner-btn {
         top: 380px;
         left: 16px;
         right: 16px;
+
+        top: auto;
+        left: 16px;
+        right: 16px;
+        position: fixed;
+        bottom: 25px;
+        z-index: 20000;
     }
 
     .black-sdtv {
@@ -1666,7 +1696,7 @@ footer {
     }
 
     .green-block-left {
-        display: flex;
+        display: block;
     }
 
     .green-block-white-title-big {

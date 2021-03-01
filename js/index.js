@@ -6,7 +6,7 @@ $(document).ready(function () {
         $('#classes-row-first').css('left', (pos_x-700)+'px');
         $('#classes-row-second').css('left', (-pos_x-700)+'px');
 
-        if(!mob_moving && $('#block-mod-description-phone').offset().top - 200 < pos_x*10){
+        if(!mob_moving && $('.block-mod-description-title').offset().top - 50 < pos_x*10){
             mob_moving = true;
             $('#block-mod-description-text').animate({'height': '100px'}, 500);
         }
