@@ -1,0 +1,29 @@
+@use "../core/variables";
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background-color: variables.$accent;
+    border-radius: 4px;
+    border: 1px solid variables.$accent;
+
+    &--white {
+        background-color: variables.$accent;
+        border-color: rgb(180, 180, 196, 1);
+        color: variables.$main-text;
+        background-color: #fff;
+    }
+}

@@ -1,0 +1,53 @@
+@use "../core/variables";
+
+.page-header {
+    background: #ffffff;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    position: sticky;
+    z-index: 5;
+    top: 0;
+    border-bottom: 1px solid #f2f2f7;
+
+    &__logo {
+        display: flex;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__toggler {
+        background-color: transparent;
+        border: none;
+
+        &-icon-close {
+            display: none;
+        }
+
+        &--opened &-icon-close {
+            display: block;
+        }
+        &--opened &-icon-menu {
+            display: none;
+        }
+    }
+
+    @media (min-width: variables.$headerBP) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        &__wrapper {
+            max-width: 1440px;
+            padding-left: 24px;
+            justify-content: start;
+        }
+        &__logo {
+            margin-right: 32px;
+        }
+
+        &__toggler {
+            display: none;
+        }
+    }
+}

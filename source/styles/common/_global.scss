@@ -1,23 +1,36 @@
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 img {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 // * Put footer at bottom
 
 body {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	background-color: var(--back);
-	color: var(--front);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--back);
+    color: var(--front);
+    font-family: "Poppins", "helvetica", "Tahoma", sans-serif;
+    box-sizing: border-box;
 }
 
 footer {
-	margin-top: auto;
+    margin-top: auto;
+}
+
+.scroll-lock {
+    overflow: hidden;
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+    html,
+    body {
+        scroll-behavior: smooth;
+    }
 }

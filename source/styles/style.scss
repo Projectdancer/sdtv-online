@@ -1,5 +1,7 @@
 @use "../../node_modules/normalize.css/normalize.css";
 
+@use "./legacy/style.css";
+
 @use "./common/_common";
 
 @use "./includes/_includes";

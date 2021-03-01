@@ -1,0 +1,63 @@
+@use "../core/variables";
+@use "../core/mixins";
+
+$header-height: 44px;
+
+.main-nav {
+    &__link {
+        color: inherit;
+        display: block;
+        text-decoration: none;
+        padding: 20px variables.$mobile-offset;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1.5;
+
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+    &__list {
+        @include mixins.reset-list;
+    }
+
+    @media (max-width: variables.$headerBP - 1px) {
+        position: fixed;
+        top: $header-height;
+        left: 0;
+        z-index: 4;
+        height: calc(100vh - #{$header-height});
+        width: 100%;
+        background-color: #ffffff;
+        &--hide {
+            display: none;
+        }
+
+        &__list {
+            display: grid;
+            margin-top: 20px;
+            &--cta {
+                display: grid;
+                grid-gap: 10px;
+                padding: 0 variables.$mobile-offset;
+            }
+        }
+    }
+
+    @media (min-width: variables.$headerBP) {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        &__list {
+            display: flex;
+        }
+        &__link {
+            padding: 10px 16px;
+        }
+        &__btn {
+            padding: 11px 24px;
+            &:first-child {
+                margin-right: 12px;
+            }
+        }
+    }
+}
