@@ -1,0 +1,60 @@
+@use "../core/variables";
+@use "../core/mixins";
+
+.page-footer {
+    background-color: variables.$main-text;
+    padding: 36px 0 21px;
+    color: #74747c;
+    &__wrapper {
+        display: grid;
+        grid-gap: 36px;
+    }
+
+    &__copyright {
+        font-size: 10px;
+    }
+
+    &__lists {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        justify-content: space-between;
+    }
+
+    &__list {
+        @include mixins.reset-list;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 1.5;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 10px 0;
+        display: block;
+    }
+
+    @media (min-width: 600px) {
+        &__wrapper {
+            grid-template-columns: 24% 206px 1fr;
+            grid-gap: 45px 9.5%;
+        }
+        &__logo {
+            width: 110px;
+            height: 110px;
+        }
+
+        &__lists, &__form{
+            grid-row-end: span 2;
+        }
+        &__lists {
+            margin-top: -10px;
+        }
+        &__copyright {
+            max-width: 21ch;
+        }
+    }
+}

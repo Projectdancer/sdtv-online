@@ -1,0 +1,32 @@
+-
+    const footerLinks = {
+        "Blog": "/blog",
+        "Careers": "/careers",
+        "Support": "/support",
+        "Terms": "terms",
+        "Privacy": "privacy"
+        }
+
+footer.page-footer#footer
+    ._wrapper.container
+        svg(width="55", height="55", fill="#ffffff", aria-labelledby="logo-sq-title")._logo
+            title#logo-sq-title=title + " Logo"
+            use(xlink:href="icons.svg#logo-square")
+
+        form(action="" method="POST").subscribe-form._form
+            label(for="subscribe-input")._label Get the latest dance content <br> &amp; SDTV news
+            input(placeholder='Email', type="email")._input#subscribe-input
+            button(type="submit").button._submit Subscribe
+
+        ._lists
+            ul._list
+                each link, val in footerLinks
+                    li
+                        a(href=link)._link=val
+            ul._list
+                li
+                    a(href="#")._link Instagram
+                    a(href="#")._link Twitter
+                    a(href="#")._link YouTube
+
+        small._copyright &copy; 2020 Social Dance TV All Rights Reserved
