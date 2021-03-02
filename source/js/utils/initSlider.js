@@ -6,7 +6,7 @@ export function initSlider(slider) {
     const tabsMode = Boolean(tabs.length);
 
     const controls = slider.querySelectorAll(".slider__button");
-    initControls()
+    initControls();
 
     let current = 0;
 
@@ -73,7 +73,19 @@ export function initSlider(slider) {
     }
 
     function nextSlide() {
-        current === slides.length - 1 ? goToSlide(0) : goToSlide(current + 1);
+        current === calcLastWrapElement()
+            ? goToSlide(0)
+            : goToSlide(current + 1);
+    }
+    function calcLastWrapElement() {
+        const wrapperWidth = wrapper.offsetWidth;
+        console.log(
+            `Math.ceil(${wrapperWidth} / ${slideWidth}) ${Math.ceil(
+                wrapperWidth / slideWidth
+            )}`
+        );
+
+        return slides.length  - Math.ceil(wrapperWidth / slideWidth);
     }
 
     function calcStartPoints() {
