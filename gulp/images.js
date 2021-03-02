@@ -20,7 +20,7 @@ function imageMinify() {
 			imagemin([
 				imagemin.gifsicle({ interlaced: true }),
 				imagemin.mozjpeg({
-					quality: 80,
+					quality: 90,
 					progressive: true,
 				}),
 				imagemin.optipng({ optimizationLevel: 5 }),

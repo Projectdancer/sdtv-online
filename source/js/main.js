@@ -1,4 +1,5 @@
-
+import { initSomething } from "./utils/initSomething.js";
+import { initSlider } from "./utils/initSlider.js";
 
 const menuButton = document.querySelector(".page-header__toggler");
 const menuList = document.querySelector(".main-nav");
@@ -10,3 +11,6 @@ menuButton.addEventListener("click", () => {
     menuList.classList.toggle("main-nav--hide");
     document.body.classList.toggle("scroll-lock");
 });
+
+
+initSomething(".slider", initSlider)

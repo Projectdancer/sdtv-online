@@ -1,0 +1,37 @@
+article.features#features
+    h2.visually-hidden Features
+    ._wrapper.container.slider
+
+        ul(role="tablist")._tablist.slider__tablist
+            mixin createTab(id, title, icon, isCurrent)
+                li(role="presentation")._presentation
+                    if isCurrent
+                        a(href=`#${id}`, role="tab", title=title)._tab.slider__tab
+                            svg(role="img", focusable="false", aria-hidden="true", width="78", height="78", fill="currentColor")._icon.-presentation
+                                use(xlink:href=`icons.svg#${icon}`)
+                            | #{title}
+                    else
+                        a(href=`#${id}`, role="tab", title=title,)._tab.slider__tab
+                            svg(role="img", focusable="false", aria-hidden="true", width="78", height="78", fill="currentColor")._icon.-presentation
+                                use(xlink:href=`icons.svg#${icon}`)
+                            | #{title}
+
+            +createTab("everywhere", "Everywhere You Are", "local", true)
+            +createTab("inspired", "Stay Inspired", "carousel-video")
+            +createTab("teaсhers", "World Class Teaсhers", "earth")
+        ._sections.slider__wrapper
+            mixin createSection(id, title, icon, text, link="#", linkText="Take class")
+                section(id=id)._section.slider__slide
+                    h3._title
+                        svg(role="img", focusable="false", aria-hidden="true", width="78", height="78", fill="currentColor")._icon.-section
+                            use(xlink:href=`icons.svg#${icon}`, width="48", height="48")
+                        | #{title}
+
+                    p._text=text
+                    a(href=link).button._cta=linkText
+
+            +createSection("everywhere", "Everywhere You Are", "local", "SDTV offers a range of tutorials across numerous dance genres. From ballet to hip-hop and even Bollywood, we have a class just for you")
+
+            +createSection("inspired", "Stay Inspired", "carousel-video", "SDTV offers a range of tutorials across numerous dance genres. From ballet to hip-hop and even Bollywood, we have a class just for you")
+
+            +createSection("teaсhers", "World Class Teaсhers", "earth", "SDTV offers a range of tutorials across numerous dance genres. From ballet to hip-hop and even Bollywood, we have a class just for you")
