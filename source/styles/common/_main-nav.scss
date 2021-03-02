@@ -47,6 +47,7 @@ $header-height: 44px;
         display: flex;
         justify-content: space-between;
         flex-grow: 1;
+        align-items: center;
         &__list {
             display: flex;
         }

@@ -1,19 +1,33 @@
 export function initSlider(slider) {
     const wrapper = slider.querySelector(".slider__wrapper");
     const slides = slider.querySelectorAll(".slider__slide");
+
     const tabs = slider.querySelectorAll(".slider__tab");
+    const tabsMode = Boolean(tabs.length);
+
+    const controls = slider.querySelectorAll(".slider__button");
+    initControls()
 
     let current = 0;
 
+    const startPoints = calcStartPoints();
+
     const slideWidth = slides[current].offsetWidth;
 
-    tabs.forEach(initTab);
-
-    goToSlide(0);
+    if (tabsMode) {
+        tabs.forEach(initTab);
+    }
 
     wrapper.addEventListener(`scroll`, () => {
-        if (wrapper.scrollLeft % slideWidth === 0) {
-            updateTabs(wrapper.scrollLeft / slideWidth);
+        if (startPoints.includes(wrapper.scrollLeft)) {
+            const newIndex = startPoints.indexOf(wrapper.scrollLeft);
+            if (newIndex !== current) {
+                if (tabsMode) {
+                    updateTabs(newIndex);
+                } else {
+                    current = newIndex;
+                }
+            }
         }
     });
 
@@ -53,17 +67,45 @@ export function initSlider(slider) {
                 }
             });
         });
+    }
+    function prevSlide() {
+        current === 0 ? goToSlide(slides.length - 1) : goToSlide(current - 1);
+    }
 
-        function prevSlide() {
-            current === 0
-                ? goToSlide(slides.length - 1)
-                : goToSlide(current - 1);
-        }
+    function nextSlide() {
+        current === slides.length - 1 ? goToSlide(0) : goToSlide(current + 1);
+    }
 
-        function nextSlide() {
-            current === slides.length - 1
-                ? goToSlide(0)
-                : goToSlide(current + 1);
+    function calcStartPoints() {
+        goToSlide(0);
+        let startPoints = [];
+        const wrapperStartPoint = wrapper.getBoundingClientRect().x;
+        slides.forEach((slide) => {
+            startPoints.push(
+                slide.getBoundingClientRect().x - wrapperStartPoint
+            );
+        });
+        return startPoints;
+    }
+
+    function initControls() {
+        if (Boolean(controls.length)) {
+            controls.forEach((control) => {
+                control.addEventListener("click", (evt) => {
+                    evt.preventDefault();
+                    switch (control.dataset.direction) {
+                        case "prev":
+                            prevSlide();
+                            break;
+                        case "next":
+                            nextSlide();
+                            break;
+
+                        default:
+                            break;
+                    }
+                });
+            });
         }
     }
 }

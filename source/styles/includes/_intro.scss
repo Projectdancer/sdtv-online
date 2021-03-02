@@ -41,7 +41,7 @@
     }
     @media (min-width: variables.$introBP) {
         background-position: right 2% center;
-        background-size: 56.5% auto;
+        background-size: min(56.5%, 814px) auto;
         padding-top: 15px;
         position: relative;
         display: flex;
@@ -59,6 +59,7 @@
         &__subtitle {
             font-size: 0.75rem;
             max-width: 27.68%;
+            margin-bottom: 52px;
         }
 
         &__cta {

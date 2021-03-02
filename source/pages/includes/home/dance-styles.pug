@@ -1,0 +1,30 @@
+section.dance-styles.container.slider
+    h2._title Dance styles
+    p._subtitle Learn moves, skills, and full routines in a range of popular styles.
+
+    ul._styles.slider__wrapper
+        mixin createStyle(style, title)
+            li._style.slider__slide
+                a(href="#"+style).figure
+                    picture._picture
+                        source(srcset=`./img/main/styles/${style}-mob.webp 227w ./img/main/styles/${style}.webp 418w`, sizes="(max-width: 720px) 227px, 418px" type="image/webp")
+                        img(src=`./img/main/styles/${style}.jpg`, alt=`${title} photo`, srcset=`./img/main/styles/${style}-mob.jpg 227w ./img/main/styles/${style}.jpg 418w`, sizes="(max-width: 720px) 227px, 418px")._image
+                        h3._caption=title
+
+        +createStyle("salsa", "Salsa")
+        +createStyle("bachata", "Bachata")
+        +createStyle("kizomba", "Kizomba")
+        +createStyle("mambo", "Mambo")
+        +createStyle("cuban", "Cuban")
+        +createStyle("swing", "Swing")
+        +createStyle("reggaeton", "Reggaeton")
+        +createStyle("tango_argentino", "Tango Argentino")
+        +createStyle("zouk", "Zouk")
+
+    aside._buttons
+        button(type="button" title="Previous slide" data-direction="prev").slider__button
+            svg(role="img" focusable="false" aria-hidden="true" width="7" height="12" fill="currentColor" ).slider__button-icon
+                use(xlink:href="icons.svg#arrow-left")
+        button(type="button" title="Next slide" data-direction="next").slider__button
+            svg(role="img" focusable="false" aria-hidden="true" width="7" height="12" fill="currentColor" ).slider__button-icon
+                use(xlink:href="icons.svg#arrow-right")

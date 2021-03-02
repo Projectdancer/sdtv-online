@@ -18,10 +18,17 @@ body {
     color: var(--front);
     font-family: "Poppins", "helvetica", "Tahoma", sans-serif;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 footer {
     margin-top: auto;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1.44rem;
+    line-height: 1.5;
 }
 
 .scroll-lock {

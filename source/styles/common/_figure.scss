@@ -1,0 +1,33 @@
+@use "../core/variables";
+
+.figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__caption {
+        padding: 5px 16px 6px;
+        bottom: 10px;
+        left: 16px;
+
+        position: absolute;
+
+        background: #ffffff;
+        border-radius: 4px;
+        color: variables.$main-text;
+
+        font-size: 0.89rem;
+        line-height: 1.5;
+    }
+    @media (min-width: 900px) {
+        &__caption{
+            font-size: 1.083rem;
+        }
+
+    }
+}

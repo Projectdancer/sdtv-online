@@ -1,0 +1,59 @@
+@use "../core/variables";
+@use "../core/mixins";
+
+$danceStylesBP: 600px;
+.dance-styles {
+    padding-top: 40px;
+    padding-bottom: 12px;
+
+    &__title {
+        margin: 0;
+    }
+
+    &__subtitle {
+        margin: 17px 0;
+    }
+
+    &__styles {
+        display: grid;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    @media (max-width: $danceStylesBP - 1px) {
+        &__styles {
+            grid-auto-flow: column;
+            grid-auto-columns: 227px;
+            gap: 10px;
+        }
+    }
+
+    @media (min-width: $danceStylesBP) {
+        &__styles {
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        &__buttons {
+            display: none;
+        }
+    }
+
+    @media (min-width: 800px) {
+        padding-top: 52px;
+        padding-bottom: 90px;
+        &__title {
+            margin-bottom: 1rem;
+        }
+
+        &__subtitle {
+            display: none;
+        }
+        &__styles {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
