@@ -1,0 +1,108 @@
+.cta-section {
+    background-color: #615eff;
+    background-image: linear-gradient(266.04deg, #615eff 0%, #0cc36b 100%);
+    color: white;
+    padding: 28px 0 32px;
+    &--triangle {
+        position: relative;
+        padding: 8px 0 16px;
+        z-index: 0;
+        &::after {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/triangle-bg.png);
+            background-size: cover;
+        }
+    }
+
+    &__wrapper {
+        z-index: 3;
+        display: grid;
+        gap: 20px;
+
+        &--narrow {
+            gap: 12px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+    }
+    &__small {
+        font-weight: 600;
+        font-size: 16px;
+        margin-left: 14px;
+    }
+
+    &__button {
+        border: none;
+    }
+
+    &__price {
+        display: none;
+    }
+
+    @media (min-width: 500px) {
+        &__wrapper {
+            padding-right: 8.46%;
+            grid-template-columns: 1fr 200px;
+            align-items: center;
+            gap: 8%;
+        }
+        &__price {
+            display: block;
+            grid-row-end: span 2;
+        }
+
+        &__title--big {
+            grid-row-end: span 2;
+        }
+    }
+
+    @media (min-width: 800px) {
+        &__wrapper {
+            padding-right: 8.46%;
+            grid-template-columns: 1fr 200px;
+            grid-template-rows: auto auto;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+            &--narrow {
+                grid-template-columns: max-content max-content 248px;
+                gap: 5%;
+            }
+        }
+        &__title {
+            grid-row-end: span 2;
+        }
+
+        &__title--big{
+            grid-row-end: auto;
+        }
+
+        &__price {
+            max-width: 212px;
+            justify-self: end;
+            margin-left: 5%;
+        }
+        &__small {
+            display: block;
+            margin-left: 0;
+        }
+        &__button {
+            grid-row-end: span 2;
+
+        }
+
+        &__sub-button  {
+            order: 1;
+            padding: 8px 16px 10px;
+            justify-self: start;
+        }
+    }
+}
