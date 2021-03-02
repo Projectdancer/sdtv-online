@@ -11,7 +11,10 @@ $featuresBP: 1080px;
 
     &__wrapper {
         display: grid;
-        gap: 45px;
+        gap: 25px;
+    }
+    &__sections {
+        padding-bottom: 25px;
     }
 
     &__icon {

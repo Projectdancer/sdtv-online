@@ -5,7 +5,8 @@ const Base = {
 
 export const Path = {
 	STYLE: {
-		source: Base.SOURCE + "styles/**/*.{sass,scss}",
+		source: Base.SOURCE + "styles/*.{sass,scss}",
+        all: Base.SOURCE + "styles/**/*.{sass,scss}",
 		build: Base.BUILD + "css/",
 	},
 
@@ -16,6 +17,7 @@ export const Path = {
 	},
 	SCRIPT: {
 		source: Base.SOURCE + "js/*.js",
+        all: Base.SOURCE + "js/**/*.js",
 		build: Base.BUILD + "js/",
 	},
 	ICON: {

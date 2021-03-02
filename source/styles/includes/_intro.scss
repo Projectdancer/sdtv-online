@@ -42,19 +42,17 @@
     @media (min-width: variables.$introBP) {
         background-position: right 2% center;
         background-size: min(56.5%, 814px) auto;
-        padding-top: 15px;
+        padding-top: 11%;
         position: relative;
         display: flex;
         min-height: calc(100vh - 63px);
         &__title {
             font-size: 2.75rem;
+            font-size: min(2.75rem, 4.58vw);
             max-width: 39.5%;
         }
 
-        &__wrapper {
-            margin-top: auto;
-            margin-bottom: auto;
-        }
+
 
         &__subtitle {
             font-size: 0.75rem;
