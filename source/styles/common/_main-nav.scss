@@ -22,10 +22,10 @@ $header-height: 44px;
 
     @media (max-width: variables.$headerBP - 1px) {
         position: fixed;
-        top: $header-height;
+        top: variables.$headerHeight;
         left: 0;
         z-index: 4;
-        height: calc(100vh - #{$header-height});
+        height: calc(100vh - #{variables.$headerHeight});
         width: 100%;
         background-color: #ffffff;
         &--hide {

@@ -1,7 +1,17 @@
 // * Example of switching light and dark theme by OS setting
 
 .page {
-	--back: rgb(248, 248, 251);
-	--front: rgb(36,36,40);
+    --back: rgb(248, 248, 251);
+    --front: rgb(36, 36, 40);
     font-size: 18px;
+
+    @media (min-width: 600px) {
+        font-size: 20px;
+    }
+    @media (min-width: 800px) {
+        font-size: 22px;
+    }
+    @media (min-width: 1000px) {
+        font-size: 24px;
+    }
 }
