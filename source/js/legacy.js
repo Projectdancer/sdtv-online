@@ -1,10 +1,6 @@
 /* $(document).ready(function () {
     var mob_moving = false;
     $(window).scroll(function() {
-        var pos_x = $(window).scrollTop()/10;
-
-        $('#classes-row-first').css('left', (pos_x-700)+'px');
-        $('#classes-row-second').css('left', (-pos_x-700)+'px');
 
         if(!mob_moving && $('.block-mod-description-title').offset().top - 50 < pos_x*10){
             mob_moving = true;

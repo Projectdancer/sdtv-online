@@ -9,3 +9,14 @@ initSomething(".slider", initSlider)
 initSomething(".tablist", initTabList)
 
 
+document.addEventListener("scroll", moveClasses)
+
+function moveClasses() {
+    const pos_x = window.scrollY / 10;
+    const row1 = document.querySelector('#classes-row-first')
+    const row2 = document.querySelector('#classes-row-second')
+
+    row1.style.left = `${pos_x - 700}px`;
+    row2.style.left = `${- pos_x - 700}px`;
+
+}
