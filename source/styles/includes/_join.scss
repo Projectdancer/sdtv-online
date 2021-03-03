@@ -1,0 +1,65 @@
+@use "../core/variables";
+@use "../core/mixins";
+
+.join {
+    padding: 32px 0 54px;
+    background-color: #f2f2f7;
+
+    &__title {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 1.24;
+        margin: 0 0 40px;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__side-text {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    &__list {
+        @include mixins.reset-list;
+        justify-content: space-between;
+        display: flex;
+        max-width: 496px;
+    }
+
+    @media (min-width: 700px) {
+        padding: 86px 0 53px;
+
+        &__title {
+            font-size: 46px;
+            margin-bottom: 0;
+        }
+
+        &__image {
+            // display: flex;
+            // max-width: 100%;
+            // height: auto;
+            grid-row-end: span 2;
+        }
+
+        &__side-text {
+            font-size: 26px;
+        }
+
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr min(48vw, 696px);
+            gap: 63px 62px;
+        }
+
+        &__partner-logo[alt="Forbs"] {
+            width: 184px;
+            height: 51px;
+        }
+        &__partner-logo[alt="Yahoo"] {
+            width: 261px;
+            height: 78px;
+        }
+    }
+}
