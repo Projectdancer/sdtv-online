@@ -1,4 +1,5 @@
 @use "../core/variables";
+
 .banner {
     background: rgba(36, 36, 40, 0.84);
     backdrop-filter: blur(8px);
@@ -9,6 +10,8 @@
     left: 0;
     width: 100%;
     z-index: 4;
+    opacity: 0;
+    animation: fadeIn 1s 1s linear forwards;
 
     &__wrapper {
         display: flex;
