@@ -16,8 +16,8 @@
         z-index: 1;
         background: linear-gradient(
             0deg,
-            #24242a 19%,
-            rgba(255, 255, 255, 0) 33%
+            variables.$main-text 19%,
+            rgba(0, 0, 0, 0) 33%
         );
     }
     &__title {

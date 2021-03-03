@@ -1,0 +1,14 @@
+
+table.advantages#advantages
+    caption.visually-hidden Advantages
+    tbody._body
+        mixin createRow(title, val, sub)
+            tr._row
+                th._title=title
+
+                td._value=val
+                    if sub === true
+                        span._sub +
+        +createRow("Instructors", "20")
+        +createRow("Classes", "90", true)
+        +createRow("Dance Styles", "10")
