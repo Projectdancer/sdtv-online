@@ -1,0 +1,30 @@
+@use "../core/variables";
+@use "../core/mixins";
+.reviews {
+    background-color: variables.$main-text;
+    color: white;
+    padding: 37px 0 53px;
+    display: grid;
+    border-radius: 0px 0px 44px 44px;
+    &__title {
+        margin: 0 0 24px;
+        text-align: center;
+    }
+
+    &__wrapper {
+        display: grid;
+    }
+
+    &__tablist {
+        order: 1;
+    }
+
+    &__list {
+        padding-bottom: 32px
+
+    }
+    @media (min-width: 800px) {
+        border-radius: 0px 0px 88px 88px;
+        padding-bottom: 97px;
+    }
+}

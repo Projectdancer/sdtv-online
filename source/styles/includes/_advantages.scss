@@ -48,17 +48,15 @@
             width: 76%;
             padding: 0;
             margin: auto;
-            @include mixins.grid-row(70px, 7%);
+            justify-content: center;
+            @include mixins.grid-row(180px, 7%);
         }
 
         &__row {
             background: #303034;
             border-radius: 16px;
-            padding: 14px;
+            padding: 14px 10px 40px;
         }
-    }
-
-    @media (min-width: 850px) {
         &__value {
             font-size: 5rem;
         }
@@ -66,4 +64,6 @@
             font-size: 26px;
         }
     }
+
+
 }

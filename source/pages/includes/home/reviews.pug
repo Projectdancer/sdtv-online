@@ -1,0 +1,27 @@
+section.reviews#reviews
+    h2._title.container What members are saying
+
+    ._wrapper.slider
+        ul(role="tablist")._tablist.slider__tablist
+            - let index = 1
+            while index < 6
+                li(role="presentation")._presentation
+                    a(href=`#review${index}`, role="tab", title=`Go to ${index} review`)._tab.slider__tab
+                    - index++
+
+        ._list.slider__wrapper
+            - index = 1
+            while index < 6
+                article(id=`review${index}`).review.slider__slide
+                    - index++
+
+                    ._wrapper
+                        svg(role="img" focusable="false" aria-hidden="true" width="59" height="41" fill="#615EFF")._icon
+                            use(xlink:href="icons.svg#quote")
+
+                        img(src="./img/main/comments/woman.jpg" width="142" height="142" alt="Jane Smith")._photo
+                        blockquote._quote I’ve always wanted to dance, but I’m really shy and since I live in a small town, I don’t have many options for lessons.. I really like the convenience of the app, I can really make the most out of my time and the classes are really fun!
+
+                        p._footer
+                            span._author Jane Smith
+                            span USA
