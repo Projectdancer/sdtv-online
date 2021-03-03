@@ -1,0 +1,166 @@
+@use "../core/variables";
+@use "../core/mixins";
+
+.instructors {
+    background-color: variables.$main-text;
+    color: white;
+    margin-top: -100px;
+    padding-top: 100px;
+    overflow: hidden;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(
+            0deg,
+            #24242a 19%,
+            rgba(255, 255, 255, 0) 33%
+        );
+    }
+    &__title {
+        margin: 27px variables.$mobile-offset 25px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__list {
+        @include mixins.reset-list;
+        display: grid;
+        grid-template-columns: repeat(7, 27.8125vw);
+        gap: 11px 7px;
+        position: relative;
+        right: 25.5%;
+        opacity: 0.25;
+        z-index: 0;
+    }
+
+    &__instructor {
+        position: relative;
+    }
+
+    &__photo {
+        display: flex;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+
+    &__name {
+        display: none;
+    }
+    &__cta-block {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        padding: 0 variables.$mobile-offset;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        max-width: 504px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__cta-text {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        font-weight: normal;
+        margin: 0 0 22px;
+    }
+
+    &__cta-icon {
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 18px;
+        svg {
+            margin: 0 21px;
+            flex-shrink: 0;
+        }
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            background-color: rgba(180, 180, 196, 0.3);
+            width: 100%;
+        }
+    }
+
+    &__cta-btn {
+        height: 56px;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    @media (min-width: 550px) {
+        padding-top: 182px;
+        &__title {
+            display: none;
+        }
+        &__list {
+            max-height: 100vh;
+            opacity: 0.6;
+            grid-template-columns: repeat(7, 15vw);
+            gap: 25px 16px;
+            width: 1566px;
+            right: 8.75vw;
+            // transform: translateX(50%);
+        }
+        &__title {
+            font-size: 1.33rem;
+            margin-bottom: 1.5rem;
+        }
+        &__cta-block {
+            background-color: #303034;
+            box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.45);
+            border-radius: 16px;
+            padding: 52px 46px 40px;
+            top: 42%;
+        }
+        &__cta-icon {
+            margin-bottom: 40px;
+        }
+
+        &__cta-btn {
+            width: auto;
+            padding: 11px 30px;
+        }
+
+        &__name {
+            position: absolute;
+            width: 100%;
+            bottom: 31px;
+            margin: 0;
+            padding: 0 10px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            z-index: 1;
+
+            display: block;
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+
+            /* white */
+
+            color: #ffffff;
+        }
+
+        &__instructor::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 210px;
+            bottom: 0;
+            left: 0;
+            background-image:  linear-gradient(180deg, rgba(36, 36, 40, 0) 0%, rgba(36, 36, 40, 0.16) 9.36%, rgba(36, 36, 40, 0.47) 24.59%, rgba(36, 36, 40, 0.65) 35.56%, rgba(36, 36, 40, 0.7893) 46.53%, rgba(36, 36, 40, 0.92) 59.87%, #242428 73.63%);
+        }
+    }
+}
