@@ -1,0 +1,67 @@
+- const tabList = {"Mirror video": "#mirror-video", "Loop moves": "#loop-moves", "Control speed": "#control-speed", "Switch views": "#switch-views"}
+
+section.custom-player#custom-player
+    ._wrapper.container
+        h2._title Custom player designed for dancers
+
+        ul(role="tablist").tablist._tablist
+            each link, name in tabList
+                li(role="presentation")._presentation
+                    if link === "#mirror-video"
+                        a(role="tab", href=link, aria-selected="true")._tab.-active=name
+                    else
+                        a(role="tab", href=link)._tab=name
+
+
+        figure(role="tabpanel")#mirror-video._figure
+            div._border
+                picture._pic
+                    source(src="./img/main/mob-program.webp" type="image/wepb")
+                    img(src="./img/main/mob-program.jpg" alt="Mirror video" width="899" height="415")
+            figcaption._caption
+                h3.visually-hidden Mirror video
+
+                svg(role="img" focusable="false" aria-hidden="true" fill="rgba(97,94,255,0.08)" width="202.5" height="180")._icon
+                    use(xlink:href="icons.svg#mirror")
+
+                p The unique digital studio technology allows you to watch dance teachers demonstrate moves from different angles, adjust the tempo of&nbsp;your class, play any move or section on loop while you practice. You&nbsp;can even cast directly to your TV.
+
+
+        figure(role="tabpanel" hidden)#loop-moves._figure
+            div._border
+                picture._pic
+                    source(src="./img/main/mob-program.webp" type="image/wepb")
+                    img(src="./img/main/mob-program.jpg" alt="Loop moves" width="899" height="415")
+            figcaption._caption
+                h3.visually-hidden Loop moves
+
+                svg(role="img" focusable="false" aria-hidden="true" fill="rgba(97,94,255,0.08)" width="202.5" height="180")._icon
+                    use(xlink:href="icons.svg#infinity")
+
+                p The unique digital studio technology allows you to watch dance teachers demonstrate moves from different angles, adjust the tempo of&nbsp;your class, play any move or section on loop while you practice. You&nbsp;can even cast directly to your TV.
+
+        figure(role="tabpanel" hidden)#control-speed._figure
+            div._border
+                picture._pic
+                    source(src="./img/main/mob-program.webp" type="image/wepb")
+                    img(src="./img/main/mob-program.jpg" alt="Control speed" width="899" height="415")
+            figcaption._caption
+                h3.visually-hidden Control speed
+
+                svg(role="img" focusable="false" aria-hidden="true" fill="rgba(97,94,255,0.08)" width="202.5" height="180")._icon
+                    use(xlink:href="icons.svg#speed")
+
+                p The unique digital studio technology allows you to watch dance teachers demonstrate moves from different angles, adjust the tempo of&nbsp;your class, play any move or section on loop while you practice. You&nbsp;can even cast directly to your TV.
+
+        figure(role="tabpanel" hidden)#switch-views._figure
+            div._border
+                picture._pic
+                    source(src="./img/main/mob-program.webp" type="image/wepb")
+                    img(src="./img/main/mob-program.jpg" alt="Switch views" width="899" height="415")
+            figcaption._caption
+                h3.visually-hidden Switch views
+
+                svg(role="img" focusable="false" aria-hidden="true" fill="rgba(97,94,255,0.08)" width="202.5" height="180")._icon
+                    use(xlink:href="icons.svg#view")
+
+                p The unique digital studio technology allows you to watch dance teachers demonstrate moves from different angles, adjust the tempo of&nbsp;your class, play any move or section on loop while you practice. You&nbsp;can even cast directly to your TV.

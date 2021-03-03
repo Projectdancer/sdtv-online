@@ -1,0 +1,136 @@
+@use "../core/variables";
+
+.custom-player {
+    padding: 28px 0 0;
+    border-radius: 0px 0px 44px 44px;
+    overflow: hidden;
+    &__title {
+        text-align: center;
+        margin: 0 0 6px;
+    }
+
+    &__tablist {
+        position: relative;
+        z-index: 2;
+        margin-top: 237px;
+    }
+
+    &__icon {
+        display: none;
+    }
+
+    &__border {
+        display: flex;
+        position: absolute;
+        width: 479px;
+        height: 263px;
+        top: -287px;
+        right: -#{variables.$mobile-offset};
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/main/iPhone.png);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__figure {
+        margin: 0;
+        position: relative;
+    }
+    &__figure[hidden] {
+        display: none;
+    }
+
+    &__pic {
+        position: absolute;
+        width: 86%;
+        left: 7%;
+        top: 9%;
+    }
+
+    &__caption {
+        background-color: #fff;
+        display: grid;
+        margin: 0 -#{variables.$mobile-offset};
+        padding: 4px variables.$mobile-offset 20px;
+    }
+
+    @media (min-width: 436px) {
+        &__border {
+            top: -271px;
+        }
+    }
+
+    @media (min-width: 515px) {
+        padding: 54px 0;
+        &__tablist {
+            margin: 0 auto;
+            width: 93.75%;
+        }
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__figure {
+            display: grid;
+            justify-items: center;
+        }
+
+        &__border {
+            position: relative;
+            top: 0;
+            order: 1;
+            right: auto;
+            margin-top: -150px;
+        }
+
+        &__caption {
+            border-radius: 5px;
+            position: static;
+            padding: 20px 36px 160px;
+            margin: 0;
+            width: 93.75%;
+        }
+    }
+
+    @media (min-width: 700px) {
+        padding: 2.25rem 0;
+        border-radius: 0px 0px 88px 88px;
+        &__title {
+            margin-bottom: 2.8rem;
+        }
+        &__tablist {
+            width: 60vw;
+        }
+        &__border {
+            width: 80%;
+            height: 0;
+            padding-top: 43%;
+        }
+
+        &__caption {
+            padding: 2.5rem 10vh 350px;
+            border-radius: 88px;
+            position: relative;
+            z-index: 1;
+        }
+        &__border {
+            margin-top: -350px;
+            z-index: 2;
+        }
+
+        &__icon {
+            display: block;
+            position: absolute;
+            top: 12.3%;
+            right: 33px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@use "../core/variables";
+@use "../core/mixins";
+
+.tablist {
+    @include mixins.reset-list;
+    display: grid;
+    gap: 12px;
+    grid-auto-flow: column;
+
+    &__tab {
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: center;
+        text-transform: uppercase;
+        justify-content: center;
+        color: inherit;
+        position: relative;
+        padding-bottom: 10px;
+
+        &:hover,
+        &--active {
+            color: variables.$accent;
+        }
+
+        &--active::before {
+            content: "";
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            position: absolute;
+            background-color: variables.$accent;
+            border-radius: 0px 0px 44px 44px;
+        }
+    }
+
+    @media (min-width: 600px) {
+        gap: initial;
+        justify-content: space-between;
+
+        &__tab {
+            font-size: 0.83rem;
+            &--active::before {
+                border-radius: 0px 0px 2.25175px 2.25175px;
+            }
+        }
+    }
+}

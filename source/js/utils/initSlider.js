@@ -28,7 +28,6 @@ export function initSlider(slider) {
     });
 
     function goToSlide(index) {
-
         wrapper.scrollLeft = startPoints[index];
         updateCurrent(index);
     }

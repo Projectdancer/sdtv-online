@@ -1,5 +1,6 @@
 import { initSomething } from "./utils/initSomething.js";
 import { initSlider } from "./utils/initSlider.js";
+import { initTabList } from "./utils/initTabList.js";
 
 const menuButton = document.querySelector(".page-header__toggler");
 const menuList = document.querySelector(".main-nav");
@@ -14,3 +15,4 @@ menuButton.addEventListener("click", () => {
 
 
 initSomething(".slider", initSlider)
+initSomething(".tablist", initTabList)
