@@ -56,9 +56,9 @@
 
     &__pic {
         position: absolute;
-        width: 86%;
+        width: 85.8%;
         left: 7%;
-        top: 9%;
+        top: 9.3%;
     }
 
     &__caption {
@@ -74,7 +74,7 @@
         }
     }
 
-    @media (min-width: 515px) {
+    @media (min-width: 600px) {
         padding: 54px 0;
         &__tablist {
             margin: 0 auto;
@@ -96,6 +96,7 @@
             order: 1;
             right: auto;
             margin-top: -150px;
+            animation: fadeInDown 0.5s ease-in forwards;
         }
 
         &__caption {
@@ -115,15 +116,16 @@
         }
         &__tablist {
             width: 60vw;
+            max-width: 864px;
         }
         &__border {
             width: 80%;
-            height: 0;
+            // height: 0;
             padding-top: 43%;
         }
 
         &__caption {
-            padding: 2.5rem 10vh 350px;
+            padding: 2.5rem min(11vw, 157px) 350px;
             border-radius: 88px;
             position: relative;
             z-index: 1;
@@ -136,8 +138,8 @@
         &__icon {
             display: block;
             position: absolute;
-            top: 12.3%;
-            right: 33px;
+            bottom: 270px;
+            right: min(2.3vw, 33px);
         }
     }
 }

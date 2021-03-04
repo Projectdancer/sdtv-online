@@ -29,16 +29,40 @@
     &__value {
         font-weight: 300;
         font-size: 46px;
-        background-image: linear-gradient(266.04deg, #615eff 0%, #0cc36b 100%);
-        background: linear-gradient(266.04deg, #615eff 0%, #0cc36b 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: flex;
-        align-items: center;
+        color: #0cc36b;
+        // background-image: -webkit-linear-gradient(266.04deg, #615eff 0%, #0cc36b 100%);
+
+        // display: flex;
+        // align-items: center;
+
+        // background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+
+        @supports ((background-clip: text) or (-webkit-background-clip: text))
+            and
+            (
+                (text-fill-color: transparent) or
+                    (-webkit-text-fill-color: transparent)
+            ) {
+            background-image: linear-gradient(
+                266.04deg,
+                #615eff 0%,
+                #0cc36b 100%
+            );
+            background-size: cover;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
     &__sub {
         font-size: 0.42em;
+        vertical-align: middle;
     }
 
     @media (min-width: 420px) {
@@ -64,6 +88,12 @@
             font-size: 26px;
         }
     }
-
-
 }
+
+/*
+.text-gradient {
+    display: inline-block;
+    color: #a166ab;
+  }
+
+  */

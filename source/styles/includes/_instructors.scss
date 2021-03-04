@@ -31,6 +31,8 @@
         @include mixins.reset-list;
         display: grid;
         grid-template-columns: repeat(7, 27.8125vw);
+        grid-auto-rows: 138.02 / 88.91 * 27.8125vw;
+
         gap: 11px 7px;
         position: relative;
         right: 25.5%;
@@ -45,8 +47,10 @@
     &__photo {
         display: flex;
         width: 100%;
+        height: 100%;
         img {
             width: 100%;
+            height: 100%;
         }
     }
 
@@ -106,10 +110,12 @@
         &__list {
             max-height: 100vh;
             opacity: 0.6;
-            grid-template-columns: repeat(7, 15vw);
+            grid-template-columns: repeat(7, max(15vw, 210px));
+            grid-auto-rows: max(326 * 15vw / 210, 326px);
+
             gap: 25px 16px;
             width: 1566px;
-            right: 8.75vw;
+            right: 4.6%;
             // transform: translateX(50%);
         }
         &__title {
@@ -153,14 +159,23 @@
             color: #ffffff;
         }
 
-        &__instructor::after{
-            content: '';
+        &__instructor::after {
+            content: "";
             position: absolute;
             width: 100%;
             height: 210px;
             bottom: 0;
             left: 0;
-            background-image:  linear-gradient(180deg, rgba(36, 36, 40, 0) 0%, rgba(36, 36, 40, 0.16) 9.36%, rgba(36, 36, 40, 0.47) 24.59%, rgba(36, 36, 40, 0.65) 35.56%, rgba(36, 36, 40, 0.7893) 46.53%, rgba(36, 36, 40, 0.92) 59.87%, #242428 73.63%);
+            background-image: linear-gradient(
+                180deg,
+                rgba(36, 36, 40, 0) 0%,
+                rgba(36, 36, 40, 0.16) 9.36%,
+                rgba(36, 36, 40, 0.47) 24.59%,
+                rgba(36, 36, 40, 0.65) 35.56%,
+                rgba(36, 36, 40, 0.7893) 46.53%,
+                rgba(36, 36, 40, 0.92) 59.87%,
+                #242428 73.63%
+            );
         }
     }
 }

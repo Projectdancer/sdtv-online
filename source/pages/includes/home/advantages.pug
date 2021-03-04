@@ -6,7 +6,8 @@ table.advantages#advantages
             tr._row
                 th._title=title
 
-                td._value=val
+                td._value
+                    span(data-animation="increase-number")=val
                     if sub === true
                         span._sub +
         +createRow("Instructors", "20")

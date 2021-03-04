@@ -16,6 +16,7 @@ $danceStylesBP: 600px;
 
     &__styles {
         display: grid;
+        overflow-y: hidden;
     }
 
     &__buttons {

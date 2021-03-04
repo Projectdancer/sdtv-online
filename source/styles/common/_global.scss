@@ -32,6 +32,11 @@ h3 {
     line-height: 1.5;
 }
 
+a,
+button {
+    -webkit-tap-highlight-color: inherit;
+}
+
 .scroll-lock {
     overflow: hidden;
 }

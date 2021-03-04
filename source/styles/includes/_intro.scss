@@ -3,12 +3,18 @@
 .intro {
     height: 82vh;
     background-color: #dde3e3;
-    background-image: url(../img/intro-desc.jpg);
-    background-repeat: no-repeat;
-    background-position: left 7.1875% bottom;
-    background-size: auto 79%;
-    padding-top: 15px;
-    position: relative;
+    display: grid;
+    align-items: start;
+
+    &::after {
+        content: "";
+        background-image: url(../img/intro-desc.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 314px;
+    }
 
     &__title {
         margin: 0 0 24px;
@@ -25,34 +31,40 @@
         line-height: 1.5;
         margin: 0 0 16px;
     }
-    @media (max-width: variables.$introBP - 1px) {
-        &__mob-wrapper {
-            background: rgba(36, 36, 40, 0.84);
-            backdrop-filter: blur(8px);
-            color: #fff;
-            padding: variables.$mobile-offset;
-            position: absolute;
-            margin: 0;
-            bottom: 0;
-            left: 0;
 
-            width: 100%;
-        }
-    }
     @media (min-width: variables.$introBP) {
         background-position: right 2% center;
-        background-size: min(56.5%, 814px) auto;
+        background-size:  auto;
         padding-top: 11%;
         position: relative;
-        display: flex;
-        min-height: calc(100vh - 63px);
+        display: block;
+        height: auto;
+        min-height: 727px + 30px + 12px; // calc(100vh - 63px);
+        padding: 150px 0 203px;
+        &::after {
+            display: none;
+            content: none;
+        }
+
+        &__wrapper {
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url(../img/intro-desc.jpg);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 62%;
+                height: 727px;
+                top: 30px;
+                right: 0;
+            }
+        }
         &__title {
             font-size: 2.75rem;
             font-size: min(2.75rem, 4.58vw);
             max-width: 39.5%;
         }
-
-
 
         &__subtitle {
             font-size: 0.75rem;
@@ -63,6 +75,12 @@
         &__cta {
             max-width: 223px;
             padding: 15px 60px;
+        }
+    }
+
+    @media (min-width: variables.$container-width + 10px) {
+        &__wrapper::after {
+            right: -35px;
         }
     }
 }

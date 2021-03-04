@@ -39,8 +39,8 @@
 
         margin-right: 40px;
     }
-    @media (min-width: 600px) {
-        flex-basis: 59vw;
+    @media (min-width: 700px) {
+        flex-basis: min(59vw, 900px);
         padding: 80px 40px 86px;
         scroll-snap-align: unset;
 
@@ -48,7 +48,7 @@
             width: 97px;
             height: 67px;
             left: -49px;
-            
+
         }
 
         &__wrapper {

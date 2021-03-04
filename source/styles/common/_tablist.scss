@@ -27,7 +27,8 @@
             color: variables.$accent;
         }
 
-        &--active::before {
+        &--active::before,
+        &:active::before {
             content: "";
             top: 100%;
             left: 0;
