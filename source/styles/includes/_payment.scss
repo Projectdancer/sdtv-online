@@ -75,9 +75,7 @@
 
     @media (max-width: 750px) {
         grid-template-columns: 1fr;
-        &__side {
-            background-image: none;
-        }
+    
         &__side &__details {
             color: #b4b4c4;
         }
