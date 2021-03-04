@@ -1,6 +1,6 @@
 - const tabList = {"Mirror video": "#mirror-video", "Loop moves": "#loop-moves", "Control speed": "#control-speed", "Switch views": "#switch-views"}
 
-section(data-animation="fadeIn").custom-player#custom-player
+section(data-aos="fade-down").custom-player#custom-player
     ._wrapper.container
         h2._title Custom player designed for dancers
 
@@ -14,7 +14,7 @@ section(data-animation="fadeIn").custom-player#custom-player
 
 
         figure(role="tabpanel")#mirror-video._figure
-            div._border
+            div(data-aos="fade-down")._border
                 picture._pic
                     source(src="./img/main/mob-program.webp" type="image/wepb")
                     img(src="./img/main/mob-program.jpg" alt="Mirror video" width="899" height="415")
@@ -28,7 +28,7 @@ section(data-animation="fadeIn").custom-player#custom-player
 
 
         figure(role="tabpanel" hidden)#loop-moves._figure
-            div._border
+            div(data-aos="fade-down")._border
                 picture._pic
                     source(src="./img/main/mob-program.webp" type="image/wepb")
                     img(src="./img/main/mob-program.jpg" alt="Loop moves" width="899" height="415")
@@ -41,7 +41,7 @@ section(data-animation="fadeIn").custom-player#custom-player
                 p The unique digital studio technology allows you to watch dance teachers demonstrate moves from different angles, adjust the tempo of&nbsp;your class, play any move or section on loop while you practice. You&nbsp;can even cast directly to your TV.
 
         figure(role="tabpanel" hidden)#control-speed._figure
-            div._border
+            div(data-aos="fade-down")._border
                 picture._pic
                     source(src="./img/main/mob-program.webp" type="image/wepb")
                     img(src="./img/main/mob-program.jpg" alt="Control speed" width="899" height="415")
@@ -54,7 +54,7 @@ section(data-animation="fadeIn").custom-player#custom-player
                 p The unique digital studio technology allows you to watch dance teachers demonstrate moves from different angles, adjust the tempo of&nbsp;your class, play any move or section on loop while you practice. You&nbsp;can even cast directly to your TV.
 
         figure(role="tabpanel" hidden)#switch-views._figure
-            div._border
+            div(data-aos="fade-down")._border
                 picture._pic
                     source(src="./img/main/mob-program.webp" type="image/wepb")
                     img(src="./img/main/mob-program.jpg" alt="Switch views" width="899" height="415")

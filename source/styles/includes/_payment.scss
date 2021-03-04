@@ -1,0 +1,32 @@
+.payment {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 376px 1fr;
+
+    &__side {
+        background-image: radial-gradient(
+            72.21% 41.14% at 50% 58.86%,
+            #615eff 0%,
+            #5c59e8 19.55%,
+            #303034 100%
+        );
+        padding: 52px 9.3%;
+    }
+
+    &__main {
+        padding: 50px 24px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    @media (max-width: 750px) {
+        grid-template-columns: 1fr;
+        &__side {
+            background-image: none;
+        }
+    }
+}

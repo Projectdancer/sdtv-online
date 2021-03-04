@@ -2,6 +2,8 @@ export function initSlider(slider) {
     const wrapper = slider.querySelector(".slider__wrapper");
     const slides = slider.querySelectorAll(".slider__slide");
 
+    let firstInit = true;
+
     let current = 0;
 
     const startPoints = calcStartPoints();
@@ -12,7 +14,7 @@ export function initSlider(slider) {
     const controls = slider.querySelectorAll(".slider__button");
     initControls();
 
-    goToSlide(0);
+    updateCurrent(current);
 
     if (tabsMode) {
         tabs.forEach(initTab);
@@ -33,8 +35,8 @@ export function initSlider(slider) {
     }
 
     function updateCurrent(index) {
-        if (tabsMode) {
-            tabs[current].removeAttribute("aria-selected")
+        if (tabsMode && !firstInit) {
+            tabs[current].removeAttribute("aria-selected");
             tabs[current].classList.remove("slider__tab--active");
             tabs[current].blur();
         }
@@ -43,18 +45,15 @@ export function initSlider(slider) {
         if (tabsMode) {
             tabs[current].classList.add("slider__tab--active");
             tabs[current].setAttribute("aria-selected", "true");
-            tabs[current].focus();
+            !firstInit ? tabs[current].focus() : (firstInit = false);
         }
     }
-
-
 
     function initTab(tab, index) {
         tab.addEventListener("click", (evt) => {
             evt.preventDefault();
             goToSlide(index);
         });
-
     }
     function prevSlide() {
         current === 0

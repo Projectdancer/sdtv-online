@@ -14,16 +14,19 @@
     animation: fadeIn 1s 1s linear forwards;
 
     &__wrapper {
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 87px;
+        display: grid;
     }
+
     &__text {
         font-size: 16px;
         margin-right: 1rem;
     }
 
-    @media (max-width: variables.$introBP - 1px) {
-        display: none;
+    @media (min-width: 500px) {
+        &__wrapper {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 87px;
+        }
     }
 }

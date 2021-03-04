@@ -11,8 +11,6 @@ export function animateWhenOnView(element) {
             break;
 
         default:
-            element.style.visibility = "visible";
-            element.classList.add(animation);
             break;
     }
 
@@ -21,6 +19,8 @@ export function animateWhenOnView(element) {
     function animate() {
         // is element in view?
         if (inView(animation)) {
+            // console.log(`Element ${element.className} in vie at ${scrollY}`);
+
             switch (animation) {
                 case "increase-number":
                     animateValue(element, 0, endVal, endVal / 90 * 4000 );
@@ -28,8 +28,6 @@ export function animateWhenOnView(element) {
                     break;
 
                 default:
-                    element.style.visibility = "visible";
-                    element.classList.add(animation);
                     break;
             }
         }
@@ -49,6 +47,7 @@ export function animateWhenOnView(element) {
 
         // is scroll position greater than element position? (is element in view?)
         if (scrollPosition > elementPosition) {
+
             return true;
         }
 
