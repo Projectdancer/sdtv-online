@@ -22,7 +22,7 @@
     text-align: center;
 
     &::hover {
-        background-color: rgb(119,116,255);
+        background-color: rgb(119, 116, 255);
     }
 
     &--white {
@@ -37,5 +37,13 @@
         border-color: currentColor;
         color: inherit;
         border-radius: 16px;
+    }
+
+    &:disabled {
+        /* light gray */
+
+        background: #f2f2f7;
+        color: #b4b4c4;
+        border-color: transparent;
     }
 }

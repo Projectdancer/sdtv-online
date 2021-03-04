@@ -1,7 +1,25 @@
+@use "../core/variables";
+@use "../core/mixins";
 .payment {
     padding: 0;
     display: grid;
     grid-template-columns: 376px 1fr;
+    &__main,
+    &__side {
+        overflow-y: scroll;
+        @include mixins.reset-scroll();
+    }
+
+    .classes-item {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+
+    .classes-item-shadow {
+        width: 50%;
+    }
 
     &__side {
         background-image: radial-gradient(
@@ -11,6 +29,14 @@
             #303034 100%
         );
         padding: 52px 9.3%;
+
+        details {
+            color: #f2f2f7;
+        }
+
+        .payment-side-list {
+            margin-top: 56px;
+        }
     }
 
     &__main {
@@ -23,10 +49,294 @@
         line-height: 27px;
     }
 
+    &__details {
+        @include mixins.detail-reset();
+        margin-top: 27px;
+    }
+
+    &__summary {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 15px;
+        /* identical to box height */
+
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: center;
+
+        /* light gray */
+
+        margin-bottom: 15px;
+        svg {
+            margin-left: 7px;
+        }
+    }
+
     @media (max-width: 750px) {
         grid-template-columns: 1fr;
         &__side {
             background-image: none;
+        }
+        &__side &__details {
+            color: #b4b4c4;
+        }
+        &__summary {
+            color: inherit;
+        }
+
+        &__main,
+        &__side {
+            overflow-y: initial;
+        }
+    }
+}
+
+.payment-side-list {
+    font-size: 14px;
+    font-weight: 600;
+    @include mixins.reset-list();
+    display: grid;
+    gap: 15px;
+
+    &__item {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        justify-content: start;
+        align-items: center;
+
+        justify-items: flex-start;
+        gap: 12px;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        display: grid;
+        place-items: center;
+    }
+}
+
+.payment-table {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: right;
+    width: 100%;
+    margin-bottom: 30px;
+
+    tbody {
+        width: 100%;
+        display: grid;
+        gap: 21px;
+    }
+
+    /* black */
+
+    color: #242428;
+    &__par {
+        font-style: normal;
+        padding: 0;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 15px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__del {
+        font-size: 10px;
+        line-height: 15px;
+        /* identical to box height */
+
+        text-align: right;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-right: 21px;
+    }
+}
+
+.payment-form {
+    &__method-list {
+        @include mixins.reset-list;
+        @include mixins.flex-row(80px, 20px);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    & &__checkbox-group--long {
+        flex-basis: 266px;
+    }
+
+    &__button-checks-label {
+        display: grid;
+        place-items: center;
+        padding: 9.5px 16px;
+        gap: 16px;
+        grid-auto-flow: column;
+
+        border: 2px solid #f2f2f7;
+        box-sizing: border-box;
+        border-radius: 4px;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__checkbox:checked ~ &__button-checks-label {
+        border-color: #615eff;
+    }
+
+    &__label {
+        font-weight: 600;
+        font-size: 12px;
+        display: grid;
+        gap: 8px;
+        position: relative;
+        &--master::before {
+            position: absolute;
+            bottom: 13px;
+            left: 16px;
+            width: 22px;
+            height: 13px;
+            content: url("../img/mastercard.svg");
+        }
+    }
+
+    &__input {
+        border-radius: 4px;
+        border: 1px solid transparent;
+        display: flex;
+        min-height: 40px;
+        padding: 11px 16px;
+        width: 100%;
+
+        &:focus {
+            background: #fff;
+        }
+        &:valid {
+            border-color: #0cc36b;
+            background-image: url("../img/done.svg");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+        &:disabled {
+            background: #f2f2f7;
+        }
+        &--icon {
+            padding-left: 50px;
+        }
+    }
+
+    &__coupon {
+        color: #b4b4c4;
+        text-align: left;
+
+        summary {
+            color: inherit;
+            text-align: left;
+        }
+    }
+
+    &__wrapper {
+        margin: 40px 0 32px;
+        display: grid;
+        grid-template-columns: 1fr 114px 114px;
+        gap: 24px 20px;
+        @media (max-width: 930px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.payment-plan {
+    background: #ffffff;
+    /* light gray */
+
+    border: 2px solid #f2f2f7;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    .payment-table {
+        padding: 0 24px;
+    }
+
+    &__header {
+        background: linear-gradient(266.04deg, #615eff 0%, #0cc36b 100%);
+        border-radius: 4px;
+        color: white;
+        display: grid;
+        grid-template-columns: 54% 1fr 1fr;
+        align-items: center;
+        padding: 14px 22px;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 26px;
+        margin: 0 0 3px;
+    }
+    &__subtitle {
+        font-weight: 600;
+        font-size: 18px;
+        margin: 0 0 19px;
+    }
+
+    &__cost {
+        font-weight: 600;
+        font-size: 14px;
+    }
+    &__more {
+        summary {
+            text-align: right;
+        }
+    }
+
+    &__save {
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        display: grid;
+        text-align: center;
+        align-items: center;
+        background-image: url("../img/green-triangle.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0;
+        &-numb {
+            order: -1;
+            font-weight: bold;
+            font-size: 50px;
+            line-height: 1;
+        }
+    }
+    hr {
+        margin: 13px 24px 16px;
+    }
+
+    &__icon {
+        justify-self: end;
+    }
+
+    @media (max-width: 810px) {
+        &__header {
+            background: linear-gradient(266.04deg, #615eff 0%, #0cc36b 100%);
+            border-radius: 4px;
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 14px 22px;
+            gap: 10px 0;
+        }
+        &__text {
+            grid-column: 1 / -1;
         }
     }
 }

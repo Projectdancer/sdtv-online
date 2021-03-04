@@ -35,6 +35,14 @@
             width: variables.$mobile-offset;
         }
     }
+    @media (max-width: 600px - 1px) {
+        &__list {
+            &::before,
+            li:last-child {
+                order: -1;
+            }
+        }
+    }
 
     @media (min-width: 600px) {
         &__text {

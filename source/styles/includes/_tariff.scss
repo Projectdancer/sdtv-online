@@ -1,3 +1,4 @@
+@use "../core/variables";
 .tariff {
     display: flex;
     flex-direction: column;
@@ -9,6 +10,7 @@
     border-radius: 18.8156px;
     padding: 24px 20px 20px;
     text-align: center;
+    color: variables.$main-text;
 
     &--accent {
         border-color: #0cc36b;
@@ -24,8 +26,11 @@
     &__price {
         font-weight: bold;
         font-size: 44px;
-        line-height: 66px;
         margin: 0;
+    }
+
+    &--popup &__price {
+        font-size: 38px;
     }
 
     &__sub {
@@ -33,6 +38,18 @@
         font-weight: 600;
         font-size: 20px;
         line-height: 30px;
+    }
+    &--popup  {
+        padding: 34px 32px 37px;
+        min-height: 356px;
+    }
+
+    &--popup &__sub {
+        font-size: 14px;
+    }
+
+    &--popup .payment-side-list {
+        margin-top: auto;
     }
 
     &__subtitle {
@@ -85,6 +102,9 @@
         &--accent {
             min-height: 545px;
         }
+        &--popup  {
+            min-height: 356px;
+        }
 
         &__name {
             font-size: 30px;
@@ -136,6 +156,16 @@
             margin-top: auto;
             order: 0;
             padding: 13px 28px;
+        }
+
+        &--popup &__name {
+            font-size: 22px;
+        }
+
+        &--popup &__subtitle {
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 5px;
         }
     }
 }

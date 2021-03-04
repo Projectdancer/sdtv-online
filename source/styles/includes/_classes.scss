@@ -71,7 +71,7 @@
 .classes-item-instructor {
     position: absolute;
     left: 16px;
-    bottom: 31px;
+    bottom: 17px;
 
     /* text-5 */
 
@@ -89,7 +89,7 @@
 }
 
 .classes-item-instructor {
-    bottom: 14px;
+    bottom: 3px;
 }
 
 .classes-item-style-white,
@@ -105,7 +105,7 @@
     position: absolute;
 
     background: linear-gradient(
-        180deg,
+        270deg,
         rgba(36, 36, 40, 0) 0%,
         rgba(36, 36, 40, 0.16) 9.36%,
         rgba(36, 36, 40, 0.47) 24.59%,
@@ -115,11 +115,9 @@
         #242428 73.63%
     );
     border-radius: 0px 0px 4px 4px;
-    transform: rotate(90deg);
 }
 
 .classes-line-space {
     width: 100%;
     overflow-x: hidden;
 }
-

@@ -1,14 +1,15 @@
-section(data-aos="fade-down").instructors#instructors
+- const instructors = ["Adolfo & Amneris", "Adolfo indacochea", "Alain Rueda & Katerina Mik", "Carlos&Chloe", "Alex & Desiree", "Bersy Cortez", "Maykel Fonts", "Gaby & Estefy", "Gigi Bianco", "Ernesto Bulnes & Denisse Cambria", "Karen & Ricardo", "Adonis Santiago", "Gaby & Estefy", "Jessica Quiles Hernandez", "Adolfo & Amneris", "Adolfo indacochea", "Alain Rueda & Katerina Mik", "Carlos&Chloe", "Alex & Desiree", "Bersy Cortez", "Adolfo & Amneris"]
+
+section(data-aos="fade" data-aos-duration="2000").instructors#instructors
     h2._title New classes added every month.
 
     ul._list
-        - const instructors = new Array(21);
-        each item in instructors
+        each item, number in instructors
             li._instructor
                 picture._photo
-                    source(srcset="./img/main/teachers/item.webp", type="image/webp")
-                    img(src="./img/main/teachers/item.jpg" alt="Alex &amp; Desiree" width="210" height="326")
-                p._name Alex &amp; Desiree
+                    source(srcset=`./img/main/teachers/${number + 1}.webp`, type="image/webp")
+                    img(src=`./img/main/teachers/${number + 1}.jpg` alt="Alex &amp; Desiree" width="210" height="326")
+                p._name=item
 
 
     ._cta-block

@@ -1,4 +1,4 @@
-section.classes#classes
+section(data-aos="fade" data-aos-duration="2000").classes#classes
     ._wrapper.container
         h2 Classes
     - const classes = new Array(10);
@@ -7,14 +7,15 @@ section.classes#classes
         each row in classesRows
             .classes-row(id=row)
                 each li in classes
-                    .classes-item
+                    a(href="#payment-class").classes-item.modal-link
                         img(src='./img/main/classes/chachacha.png')
                         .classes-item-shadow
                         .classes-item-btn Routines
                         .classes-item-title Cha Cha Cha Footwork &quot;Oye Como Va&quot;
-                        .classes-item-style
-                            | Style:&nbsp;
-                            span.classes-item-style-white Cha Cha Cha
-                        .classes-item-instructor
-                            | Instructor:&nbsp;
-                            span.classes-item-instructor-white Adolfo &amp; Amneris
+                        footer._footer
+                            .classes-item-style
+                                | Style:&nbsp;
+                                span.classes-item-style-white Cha Cha Cha
+                            .classes-item-instructor
+                                | Instructor:&nbsp;
+                                span.classes-item-instructor-white Adolfo &amp; Amneris
