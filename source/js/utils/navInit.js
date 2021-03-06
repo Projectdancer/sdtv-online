@@ -8,7 +8,10 @@ export function navInit() {
 
     links.forEach((link) => {
         link.addEventListener("click", () => {
-            changeNavState();
+            if (window.innerWidth < 950) {
+                changeNavState();
+            }
+
             const target = link.getAttribute("href");
             if (target[0] === "#") {
                 const element = document.querySelector(target);

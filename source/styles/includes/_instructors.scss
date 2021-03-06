@@ -42,6 +42,8 @@
 
     &__instructor {
         position: relative;
+        border-radius: 4px;
+        overflow: hidden;
     }
 
     &__photo {
@@ -108,7 +110,7 @@
             display: none;
         }
         &__list {
-            max-height: 100vh;
+            // max-height: 100vh;
             opacity: 0.6;
             grid-template-columns: repeat(7, max(15vw, 210px));
             grid-auto-rows: max(326 * 15vw / 210, 326px);

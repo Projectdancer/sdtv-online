@@ -15,11 +15,17 @@
     &--accent {
         border-color: #0cc36b;
     }
+    &--selected {
+        border-color: #0cc36b;
+        background-image: url("../img/done.svg");
+        background-repeat: no-repeat;
+        background-position: right 16px top 16px;
+    }
 
     &__name {
         font-weight: bold;
         font-size: 20px;
-        line-height: 30px;
+        line-height: 1.5;
         margin: 0 0 38px;
     }
 
@@ -39,7 +45,7 @@
         font-size: 20px;
         line-height: 30px;
     }
-    &--popup  {
+    &--popup {
         padding: 34px 32px 37px;
         min-height: 356px;
     }
@@ -102,12 +108,13 @@
         &--accent {
             min-height: 545px;
         }
-        &--popup  {
+        &--popup {
             min-height: 356px;
         }
 
         &__name {
             font-size: 30px;
+            margin-bottom: auto;
         }
 
         &__price {

@@ -5,18 +5,17 @@ article(hidden).payment.modal#payment-class
     aside._side
         h2.__title Level up fast, try premium to unlock this class
         .classes-item
-            img(src='./img/main/classes/chachacha.png')
-            .classes-item-shadow
-            .classes-item-btn Routines
-            .classes-item-title Cha Cha Cha Footwork &quot;Oye Como Va&quot;
-            footer._footer
-                .classes-item-style
-                    | Style:&nbsp;
-                    span.classes-item-style-white Cha Cha Cha
-                .classes-item-instructor
-                    | Instructor:&nbsp;
-                    span.classes-item-instructor-white Adolfo &amp; Amneris
-
+            img(src=`./img/main/classes/item1.jpg`).__image
+            .__wrapper
+                span(class=colors[current])._tag Routines
+                ._title Cha Cha Cha Footwork &quot;Oye Como Va&quot;
+                footer._footer
+                    .classes-item-style
+                        | Style:&nbsp;
+                        span.classes-item-style-white Cha Cha Cha
+                    .classes-item-instructor
+                        | Instructor:&nbsp;
+                        span.classes-item-instructor-white Adolfo &amp; Amneris
         include payment-side-list
 
 

@@ -17,10 +17,9 @@ export function initModalToggler(modalToggler) {
     });
 }
 
-function showModal(modal) {
+export function showModal(modal) {
     modal.hidden = false;
     document.body.classList.add(`overlay`);
-
     const firstInput = modal.querySelector(`input`);
     if (firstInput) {
         firstInput.focus();

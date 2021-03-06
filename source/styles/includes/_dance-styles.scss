@@ -27,7 +27,7 @@ $danceStylesBP: 600px;
     @media (max-width: $danceStylesBP - 1px) {
         &__styles {
             grid-auto-flow: column;
-            grid-auto-columns: 227px;
+            grid-auto-columns: 70vw;
             gap: 10px;
         }
     }

@@ -6,7 +6,7 @@ section(data-aos="fade" data-aos-duration="2000").dance-styles.container.slider#
         mixin createStyle(style, title)
             li._style.slider__slide
                 a(href="#"+style).figure
-                    picture._picture
+                    picture(data-aos="fade-down" data-aos-duration="3000")._picture
                         source(srcset=`./img/main/styles/${style}-mob.webp 227w, ./img/main/styles/${style}.webp 418w`, sizes="(max-width: 720px) 227px, 418px" type="image/webp")
                         img(src=`./img/main/styles/${style}.jpg`, alt=`${title} photo`, srcset=`./img/main/styles/${style}-mob.jpg 227w, ./img/main/styles/${style}.jpg 418w`, sizes="(max-width: 720px) 227px, 418px")._image
                         h3._caption=title

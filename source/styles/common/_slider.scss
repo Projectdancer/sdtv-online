@@ -27,8 +27,8 @@
         display: grid;
         grid-auto-flow: column;
         gap: 20px;
-        grid-auto-columns: 16px;
-        grid-auto-rows: 16px;
+        grid-auto-columns: 8px;
+        grid-auto-rows: 8px;
         justify-content: center;
     }
 
@@ -56,5 +56,12 @@
         border: none;
         height: 40px;
         width: 40px;
+    }
+
+    @media (min-width: 600px) {
+        &__tablist {
+            grid-auto-columns: 16px;
+            grid-auto-rows: 16px;
+        }
     }
 }

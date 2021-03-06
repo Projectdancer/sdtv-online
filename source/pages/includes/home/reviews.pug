@@ -1,27 +1,52 @@
+-
+    const reviews = [
+            {
+                name: "Juliane",
+                country: "Quebec, Canada",
+                text: "I’ve always wanted to dance, but I’m really shy and since I live in a small town, I don’t have many options for lessons.. I really like the convenience of the app, I can really make the most out of my time and the classes are really fun!"
+            },
+            {
+                name: "Beth Andy",
+                country: "Melbourne, Australia",
+                text: "The teaching is really good quality, better than some real classes I have attended. The pace is great and it's such a great opportunity to practice all different styles!"
+            },
+            {
+                name: "Michael",
+                country: "Uppsala, Sweden",
+                text: "I am thrilled with quality of teaching and explaining. Besides, technical features make the course rrrrrrrreally helpful: mirror, looping, speed adjusting, back view. Before I was just learning with videos in youtube. The difference is huge."
+            }
+            ,
+            {
+                name: "Irina",
+                country: "Russia",
+                text: "I really like the variety. There is a huge amount of classes on all levels, beginner to advanced, and it will take a long time until you have no more classes to take."
+            },
+            {
+                name: "Jane Smith",
+                country: "USA",
+                text: "I’ve always wanted to dance, but I’m really shy and since I live in a small town, I don’t have many options for lessons.. I really like the convenience of the app, I can really make the most out of my time and the classes are really fun!"
+            }
+        ]
+
 section(data-aos="fade" data-aos-duration="2000").reviews#reviews
     h2._title.container What members are saying
 
     ._wrapper.slider
         ul(role="tablist")._tablist.slider__tablist
-            - let index = 1
-            while index < 6
+            for review, index in reviews
                 li(role="presentation")._presentation
-                    a(href=`#review${index}`, role="tab", title=`Go to ${index} review`)._tab.slider__tab
-                    - index++
+                    a(href=`#review${index+1}`, role="tab", title=`Go to ${index+1} review`)._tab.slider__tab
 
         ._list.slider__wrapper
-            - index = 1
-            while index < 6
-                article(id=`review${index}`).review.slider__slide
-                    - index++
-
+            for review, index in reviews
+                article(id=`review${index+1}`).review.slider__slide
                     ._wrapper
                         svg(role="img" focusable="false" aria-hidden="true" width="59" height="41" fill="#615EFF")._icon
                             use(xlink:href="icons.svg#quote")
 
-                        img(src="./img/main/comments/woman.jpg" width="142" height="142" alt="Jane Smith")._photo
-                        blockquote._quote I’ve always wanted to dance, but I’m really shy and since I live in a small town, I don’t have many options for lessons.. I really like the convenience of the app, I can really make the most out of my time and the classes are really fun!
+                        img(src=`./img/main/comments/${index+1}.jpg` width="142" height="142" alt="Jane Smith")._photo
+                        blockquote._quote=review.text
 
                         p._footer
-                            span._author Jane Smith
-                            span USA
+                            span._author=review.name
+                            span=review.country

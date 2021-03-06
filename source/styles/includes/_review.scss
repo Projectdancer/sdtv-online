@@ -10,6 +10,9 @@
         position: relative;
         background-color: #303034;
         padding: 100px 20px 30px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     &__icon {
         position: absolute;
@@ -23,15 +26,17 @@
         left: calc(50% - 79px);
         border-radius: 50%;
         border: 8px solid #242428;
+
     }
     &__quote {
         padding: 0;
-        margin: 0;
+        margin: 0 0 32px;
     }
     &__footer {
         color: rgb(180, 180, 196);
-        margin: 32px 0 0;
+        margin:  0 0;
         font-size: 14px;
+        margin-top: auto;
     }
 
     &__author {

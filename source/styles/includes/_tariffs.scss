@@ -49,7 +49,11 @@
             display: block;
             margin: 0 0 74px;
         }
-
+        &__title {
+            font-weight: 600;
+            font-size: 46px;
+            margin-bottom: 37px;
+        }
         &__list {
             grid-template-columns: repeat(2, 1fr);
             gap: 64px;
@@ -62,5 +66,16 @@
                 content: none;
             }
         }
+    }
+
+    @media (min-width: variables.$container-width) {
+        position: relative;
+        overflow-x: hidden;
+        background-image: url(../img/bg.svg);
+        background-size: auto 110%;
+        background-repeat: no-repeat;
+
+        background-position-x: 50%;
+        background-position-y: 50%;
     }
 }
