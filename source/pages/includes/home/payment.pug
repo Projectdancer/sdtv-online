@@ -3,33 +3,37 @@ article(hidden).payment.modal#payment
             svg(role="img", focusable="false", aria-hidden="true", fill="#B4B4C4" width="10", height="10")._modal__close-icon
                 use(xlink:href="icons.svg#close")
     aside._side
-        article.tariff.-popup.-selected
-            h3._name The Enthusiast
-            p._price $20
-                sub._sub / mo
-            p._subtitle billed monthly fee
+        label
+            input#payment-paypal(type="radio", name="tariff", value="Enthusiast", checked).visually-hidden
+            article.tariff.-popup
+                h3._name The Enthusiast
+                p._price $20
+                    sub._sub / mo
+                p._subtitle billed monthly fee
 
-            include payment-side-list
+                include payment-side-list
 
         details._details
             summary._summary
                 | More plans
                 svg(role="img", focusable="false", aria-hidden="true", width="12", height="6", fill="currentColor")
                     use(xlink:href="icons.svg#down")
-
-            article.tariff.-popup
-                h3._name The Professional
-                p._price $8.33
-                    sub._sub / mo
-                p._subtitle recurring annual fee
-                p._subtitle.-accent save $141
-                include payment-side-list
+            label
+                input#payment-paypal(type="radio", name="tariff", value="Professional").visually-hidden
+                article.tariff.-popup
+                    h3._name The Professional
+                    p._price $8.33
+                        sub._sub / mo
+                    p._subtitle recurring annual fee
+                    p._subtitle.-accent save $141
+                    include payment-side-list
     ._main
         section
             h2.__title Select a Plan
             include payment-table
         section
             h2.__title Payment Method
+            - let formId = 1;
 
             include payment-form
 

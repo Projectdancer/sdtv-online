@@ -12,11 +12,11 @@ export function navInit() {
                 changeNavState();
             }
 
-            const target = link.getAttribute("href");
-            if (target[0] === "#") {
-                const element = document.querySelector(target);
-                element.scrollIntoView();
-            }
+            // const target = link.getAttribute("href");
+            // if (target[0] === "#") {
+            //     const element = document.querySelector(target);
+            //     element.scrollIntoView();
+            // }
         });
     });
 }

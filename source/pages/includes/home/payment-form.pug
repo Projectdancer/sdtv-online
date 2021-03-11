@@ -1,23 +1,23 @@
 form.payment-form
     ul._method-list
         li._checkbox-group.-long
-            input#payment-card(type="radio", name="method", value="card" checked).visually-hidden._checkbox
-            label(for="payment-card")._button-checks-label
+            input(type="radio", id=`payment-card-${formId}` name="method", value="card" checked).visually-hidden._checkbox
+            label(for=`payment-card-${formId}` )._button-checks-label
                 | Credit or Debit Card
                 img(src="img/mastercard.svg", alt="Visa", width="22" height="13")
                 img(src="img/visa.svg", alt="Visa", width="28" height="9")
 
         li._checkbox-group
-            input#payment-paypal(type="radio", name="method", value="paypal").visually-hidden._checkbox
-            label(for="payment-paypal")._button-checks-label
+            input(type="radio", name="method", value="paypal", id=`payment-paypal-${formId}`).visually-hidden._checkbox
+            label(for=`payment-paypal-${formId}`)._button-checks-label
                 img(src="img/paypal.svg", alt="Paypal", width="56" height="15")
         li._checkbox-group
-            input#payment-google(type="radio", name="method", value="google-pay").visually-hidden._checkbox
-            label(for="payment-google")._button-checks-label
+            input(id=`payment-google-${formId}` type="radio", name="method", value="google-pay").visually-hidden._checkbox
+            label(for=`payment-google-${formId}`)._button-checks-label
                 img(src="img/google-pay.svg", alt="Google Pay", width="41" height="16")
         li._checkbox-group
-            input#payment-apple(type="radio", name="method", value="apple-pay").visually-hidden._checkbox
-            label(for="payment-apple")._button-checks-label
+            input(id=`payment-apple-${formId}` type="radio", name="method", value="apple-pay").visually-hidden._checkbox
+            label(for=`payment-apple-${formId}`)._button-checks-label
                 img(src="img/apple-pay.svg", alt="Apple Pay", width="41" height="16")
 
     ._wrapper
@@ -27,16 +27,16 @@ form.payment-form
 
         label._label
             | Expiration
-            input#card-number(type="text", name="card-exp", placeholder="MM / YY" autocomplete ="cc-exp" disabled)._input
+            input#card-number(type="text", name="card-exp", placeholder="MM / YY" autocomplete ="cc-exp" )._input
         label._label
             | CVV
-            input#card-number(type="text", name="card-cvv", placeholder="CVV" autocomplete ="cc-csc" disabled)._input
+            input#card-number(type="text", name="card-cvv", placeholder="CVV" autocomplete ="cc-csc" )._input
 
         label._label
             | Card Holder Name
-            input#card-number(type="text", name="card-hold", placeholder="Card Holder Name" autocomplete="cc-name" disabled)._input
+            input#card-number(type="text", name="card-hold", placeholder="Card Holder Name" autocomplete="cc-name" )._input
 
-    button(type="submit" disabled)._submit.button Start membership
+    button(type="submit" )._submit.button Start membership
 
     details.payment__details._coupon
         summary.payment__summary
@@ -44,5 +44,5 @@ form.payment-form
             svg(role="img", focusable="false", aria-hidden="true", width="12", height="6", fill="currentColor")
                 use(xlink:href="icons.svg#down")
 
-        input#card-number(type="text", name="card-hold", minlength="2", placeholder="Enter a Coupon Code" autocomplete="cc-name").payment-form__input
+        input#card-number(type="text", name="card-hold", minlength="2", placeholder="Enter a Coupon Code").payment-form__input
 

@@ -21,15 +21,18 @@
     border: 1px solid variables.$accent;
     text-align: center;
 
-    &::hover {
+    &:hover {
         background-color: rgb(119, 116, 255);
     }
 
     &--white {
-        background-color: variables.$accent;
         border-color: rgb(180, 180, 196, 1);
         color: variables.$main-text;
         background-color: #fff;
+        &:hover {
+            color: variables.$accent;
+            background-color: #fff;
+        }
     }
 
     &--border {

@@ -3,7 +3,8 @@ import { removeHashFromUrl } from "./removeHashfromURL.js";
 export function initModalToggler(modalToggler) {
     const modal = document.querySelector(modalToggler.getAttribute(`href`));
     if (!modal) {
-        return;``
+        return;
+        ``;
     }
     modal.classList.remove(`modal--no-js`);
 
@@ -18,8 +19,9 @@ export function initModalToggler(modalToggler) {
 }
 
 export function showModal(modal) {
+    const overlay = document.querySelector(`.overlay`);
     modal.hidden = false;
-    document.body.classList.add(`overlay`);
+    overlay.hidden = false;
     const firstInput = modal.querySelector(`input`);
     if (firstInput) {
         firstInput.focus();
@@ -38,10 +40,12 @@ export function showModal(modal) {
         }
     });
 
+    overlay.addEventListener("click", hideModal);
+
     function hideModal(evt) {
         evt.preventDefault();
         modal.hidden = true;
-        document.body.classList.remove(`overlay`);
+        overlay.hidden = true;
         removeHashFromUrl();
     }
 }

@@ -15,12 +15,7 @@
     &--accent {
         border-color: #0cc36b;
     }
-    &--selected {
-        border-color: #0cc36b;
-        background-image: url("../img/done.svg");
-        background-repeat: no-repeat;
-        background-position: right 16px top 16px;
-    }
+
 
     &__name {
         font-weight: bold;
@@ -103,8 +98,8 @@
         padding: 13px 28px;
     }
 
-    @media (min-width: 600px) {
-        min-height: 490px;
+@media (min-width: 600px) {
+        min-height: 464px;
         &--accent {
             min-height: 545px;
         }
@@ -114,7 +109,7 @@
 
         &__name {
             font-size: 30px;
-            margin-bottom: auto;
+            margin-bottom: 94px;
         }
 
         &__price {

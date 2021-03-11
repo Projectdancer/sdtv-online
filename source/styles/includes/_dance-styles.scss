@@ -6,6 +6,7 @@ $danceStylesBP: 600px;
     padding-top: 40px;
     padding-bottom: 12px;
 
+
     &__title {
         margin: 0;
     }
@@ -46,6 +47,7 @@ $danceStylesBP: 600px;
     @media (min-width: 800px) {
         padding-top: 52px;
         padding-bottom: 90px;
+        scroll-margin-block-start: 60px;
         &__title {
             margin-bottom: 1rem;
         }

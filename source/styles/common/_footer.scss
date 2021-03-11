@@ -3,7 +3,7 @@
 
 .page-footer {
     background-color: variables.$main-text;
-    padding: 36px 0 21px;
+    padding: 36px 0 130px;
     color: #74747c;
     &__wrapper {
         display: grid;
@@ -38,6 +38,7 @@
     }
 
     @media (min-width: 650px) {
+        padding-bottom: 90px;
         &__wrapper {
             grid-template-columns: 24% 206px 1fr;
             grid-gap: 45px 9.5%;
