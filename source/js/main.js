@@ -5,7 +5,8 @@ import { navInit } from "./utils/navInit.js";
 import { animateWhenOnView } from "./utils/animateWhenOnView.js";
 import { initModalToggler } from "./utils/initModalToggler.js";
 import { initClassForm } from "./utils/initClassForm.js";
-import AOS from 'aos';
+import initVideoOnHover from "./utils/initVideoOnHover.js";
+import AOS from "aos";
 
 AOS.init();
 
@@ -21,6 +22,7 @@ initSomething("[data-animation]", animateWhenOnView);
 initSomething(".modal-link", initModalToggler);
 
 initSomething(".classes-item[href]", initClassForm);
+initSomething(".figure--video", initVideoOnHover);
 
 document.addEventListener("scroll", moveClasses);
 

@@ -40,6 +40,10 @@
         border-color: currentColor;
         color: inherit;
         border-radius: 16px;
+        &:hover {
+            background-color: white;
+            color: variables.$main-text;
+        }
     }
 
     &:disabled {

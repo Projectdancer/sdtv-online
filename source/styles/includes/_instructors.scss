@@ -8,18 +8,7 @@
     padding-top: 100px;
     overflow: hidden;
     position: relative;
-    &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background: linear-gradient(
-            0deg,
-            variables.$main-text 19%,
-            rgba(0, 0, 0, 0) 33%
-        );
-    }
+
     &__title {
         margin: 27px variables.$mobile-offset 25px;
         text-align: center;
@@ -38,6 +27,19 @@
         right: 25.5%;
         opacity: 0.25;
         z-index: 0;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            z-index: 2;
+            background: linear-gradient(
+                0deg,
+                #242428 14%,
+                rgba(0, 0, 0, 0) 33%
+            );
+        }
     }
 
     &__instructor {
@@ -61,7 +63,7 @@
     }
     &__cta-block {
         position: absolute;
-        top: 50%;
+        top: 20%;
         z-index: 1;
         padding: 0 variables.$mobile-offset;
         width: 100%;
