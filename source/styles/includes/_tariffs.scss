@@ -1,82 +1,93 @@
 @use "../core/variables";
+
 @use "../core/mixins";
 
 .tariffs {
-    padding: 40px 0 21px;
-    &__wrapper {
-        max-width: 940px;
-        text-align: center;
-    }
-    &__title {
-        margin: 0;
-    }
+	padding: 40px 0 21px;
 
-    &__text {
-        display: none;
-    }
-    &__list {
-        display: grid;
-        grid-template-columns: variables.$mobile-offset;
-        grid-auto-columns: 238px;
-        grid-auto-flow: column;
+	&__wrapper {
+		max-width: 940px;
+		text-align: center;
+	}
 
-        margin: 0 variables.$mobile-offset;
-        // justify-items: end;
-        @include mixins.reset-list;
-        @include mixins.reset-scroll;
-        overflow-x: scroll;
-        overflow-y: visible;
-        scroll-snap-type: x proximity;
-        padding: 40px 0;
-        gap: 20px;
-        &::after,
-        &::before {
-            content: "";
-            width: variables.$mobile-offset;
-        }
-    }
-    @media (max-width: 600px - 1px) {
-        &__list {
-            &::before,
-            li:last-child {
-                order: -1;
-            }
-        }
-    }
+	&__title {
+		margin: 0;
+	}
 
-    @media (min-width: 600px) {
-        padding-top: 80px;
-        &__text {
-            display: block;
-            margin: 0 0 74px;
-        }
-        &__title {
-            font-weight: 600;
-            font-size: 46px;
-            margin-bottom: 37px;
-        }
-        &__list {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 64px;
-            max-width: 906px;
-            margin: 0 auto;
-            justify-content: center;
-            align-items: start;
-            &::after,
-            &::before {
-                content: none;
-            }
-        }
-    }
+	&__text {
+		display: none;
+	}
 
-    @media (min-width: variables.$container-width) {
-        position: relative;
-        overflow-x: hidden;
-        background-image: url(../img/bg.svg);
-        background-size: auto 110%;
-        background-repeat: no-repeat;
+	&__list {
+		display: grid;
+		grid-template-columns: variables.$mobile-offset;
+		grid-auto-columns: 238px;
+		grid-auto-flow: column;
+		margin: 0 variables.$mobile-offset;
+		// justify-items: end;
 
-        background-position-x: 50%;
-        background-position-y: 50%;
-    }
+		@include mixins.reset-list;
+
+		@include mixins.reset-scroll;
+
+		overflow-x: scroll;
+		overflow-y: visible;
+		scroll-snap-type: x proximity;
+		padding: 40px 0;
+		gap: 20px;
+
+		&::after,
+		&::before {
+			content: "";
+			width: variables.$mobile-offset;
+		}
+	}
+
+	@media (max-width: 600px - 1px) {
+		&__list {
+			&::before,
+			li:last-child {
+				order: -1;
+			}
+		}
+	}
+
+	@media (min-width: 600px) {
+		padding-top: 80px;
+
+		&__text {
+			display: block;
+			margin: 0 0 74px;
+		}
+
+		&__title {
+			font-weight: 600;
+			font-size: 46px;
+			margin-bottom: 37px;
+		}
+
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 64px;
+			max-width: 906px;
+			margin: 0 auto;
+			justify-content: center;
+			align-items: start;
+
+			&::after,
+			&::before {
+				content: none;
+			}
+		}
+	}
+
+	@media (min-width: variables.$container-width) {
+		position: relative;
+		overflow-x: hidden;
+		background-image: url(../img/bg.svg);
+		background-size: auto 110%;
+		background-repeat: no-repeat;
+		background-position-x: 50%;
+		background-position-y: 50%;
+	}
 }
